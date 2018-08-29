@@ -1,7 +1,7 @@
 /*
-A promise is a javascript object that links the producing code (async or sync) and the consuming code (.then() and .catch()) together.
+A promise is a javascript object that links the producing code -- the executor callback function (async or sync) and the consuming code (.then() and .catch()) together.
 The "promise code" takes whatever time it needs to produce the promised result, and the "promise" makes that
-result available to all of the subscribed code when its ready by either resolve(value) or reject(error).
+result available to all of the subscribed code (callback functions of the .then() and .catch()) when its ready by either resolve(value) or reject(error).
 
 constructor syntax for a promise
 the callback function passed into the new Promise is called the executor function. when the promise is created, this executor function runs automatically.
@@ -15,7 +15,7 @@ resolve(value) - indicates a sucessful job - sets result to value - sets state t
 reject(error) - indicates that an error occured - sets result to error - sets state to "rejected"
 
 executor is called immediately amd automatically (by the new Promise)
-executor recieves two arguments: resolve and reject -- these fucntions are pre-defined by Javascript engine 
+executor recieves two arguments: resolve and reject -- these functions are pre-defined by Javascript engine 
 so we dont need to create them but just have the executor call them when ready
 */
 
